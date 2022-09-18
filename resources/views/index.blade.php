@@ -9,7 +9,12 @@
                     <a href="#">
                         <img src="/ff7.jpg" alt="game cover" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
+                    <div class="absolute"></div>
                 </div>
+                <a href="#" class="block text-base font-semibold leading-tight hover:text-gray-400 mt-8">
+                    Final Fantasy 7 Remake
+                </a>
+                <div class="text-gray-400 mt-1">Playstation 4</div>
             </div>
         </div>
     </div>
