@@ -7,7 +7,7 @@
             <div class="game mt-8">
                 <div class="relative inline-block">
                     <a href="#">
-                        <img src="/ff7.jpg" alt="game cover">
+                        <img src="/ff7.jpg" alt="game cover" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
                 </div>
             </div>
