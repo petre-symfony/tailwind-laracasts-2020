@@ -179,6 +179,56 @@
                             <div class="text-gray-400 text-sm mt-1">Sept 16, 2020</div>
                         </div>
                     </div>
+                    <div class="game flex">
+                        <a href="#">
+                            <img src="/avengers.jpg" alt="game cover" class="w-16 hover:opacity-75 transition ease-in-out duration-150">
+                        </a>
+                        <div class="ml-4">
+                            <a href="#" class="hover:text-gray-300">Marvel's Avengers</a>
+                            <div class="text-gray-400 text-sm mt-1">Sept 3, 2020</div>
+                        </div>
+                    </div>
+                    <div class="game flex">
+                        <a href="#">
+                            <img src="/tlou2.jpg" alt="game cover" class="w-16 hover:opacity-75 transition ease-in-out duration-150">
+                        </a>
+                        <div class="ml-4">
+                            <a href="#" class="hover:text-gray-300">The Last of Us Part II</a>
+                            <div class="text-gray-400 text-sm mt-1">June 19, 2020</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="coming-soon-container space-y-10 mt-8">
+                    <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Coming Soon</h2>
+                    <div class="game flex">
+                        <a href="#">
+                            <img src="/ghost.jpg" alt="game cover" class="w-16 hover:opacity-75 transition ease-in-out duration-150">
+                        </a>
+                        <div class="ml-4">
+                            <a href="#" class="hover:text-gray-300">Ghost of Tsushima</a>
+                            <div class="text-gray-400 text-sm mt-1">July 17, 2020</div>
+                        </div>
+                    </div>
+                    <div class="game flex">
+                        <a href="#">
+                            <img src="/resident.jpg" alt="game cover" class="w-16 hover:opacity-75 transition ease-in-out duration-150">
+                        </a>
+                        <div class="ml-4">
+                            <a href="#" class="hover:text-gray-300">Resident Evil 3</a>
+                            <div class="text-gray-400 text-sm mt-1">August 19, 2020</div>
+                        </div>
+                    </div>
+                    <div class="game flex">
+                        <a href="#">
+                            <img src="/luigi.jpg" alt="game cover" class="w-16 hover:opacity-75 transition ease-in-out duration-150">
+                        </a>
+                        <div class="ml-4">
+                            <a href="#" class="hover:text-gray-300">Luigi's Mansion</a>
+                            <div class="text-gray-400 text-sm mt-1">September 12, 2020</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
