@@ -25,11 +25,11 @@
                     <input type="text"
                         class="
                             bg-gray-800 text-sm rounded-full px-3 py-1
-                            focus:outline-none focus:ring w-64
+                            focus:outline-none focus:ring w-64 pl-8
                         "
                         placeholder="Search..."
                     >
-                    <div class="absolute top-0">
+                    <div class="absolute top-0 flex items-center h-full ml-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor"
