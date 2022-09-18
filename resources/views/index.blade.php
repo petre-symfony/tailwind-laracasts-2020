@@ -168,7 +168,18 @@
                 </div>
             </div>
             <div class="most-anticipated w-1/4">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+                <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Most Anticipated</h2>
+                <div class="most-anticipated-container space-y-10 mt-8">
+                    <div class="game flex">
+                        <a href="#">
+                            <img src="/cyberpunk.jpg" alt="game cover" class="w-16 hover:opacity-75 transition ease-in-out duration-150">
+                        </a>
+                        <div class="ml-4">
+                            <a href="#" class="hover:text-gray-300">Cyberpunk 2077</a>
+                            <div class="text-gray-400 text-sm mt-1">Sept 16, 2020</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div><!-- end container -->
