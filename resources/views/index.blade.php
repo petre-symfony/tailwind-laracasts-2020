@@ -111,9 +111,9 @@
                     <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
                         <div class="relative inline-block">
                             <a href="#">
-                                <img src="/ff7.jpg" alt="game cover" class="hover:opacity-75 transition ease-in-out duration-150">
+                                <img src="/ff7.jpg" alt="game cover" class="w-48 hover:opacity-75 transition ease-in-out duration-150">
                             </a>
-                            <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full" style="right: -20px; bottom: -20px">
+                            <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-900 rounded-full" style="right: -20px; bottom: -20px">
                                 <div class="font-semibold text-xs flex justify-center items-center h-full">80%</div>
                             </div>
                         </div>
