@@ -106,7 +106,19 @@
 
         <div class="flex my-10">
             <div class="recently-reviewed w-3/4 mr-32">
-                It is a long established fact that a reader will be distracted by the readable content of a page
+                <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Recently Reviewed</h2>
+                <div class="recently-reviewed-container space-y-12 mt-8">
+                    <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
+                        <div class="relative inline-block">
+                            <a href="#">
+                                <img src="/ff7.jpg" alt="game cover" class="hover:opacity-75 transition ease-in-out duration-150">
+                            </a>
+                            <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full" style="right: -20px; bottom: -20px">
+                                <div class="font-semibold text-xs flex justify-center items-center h-full">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="most-anticipated w-1/4">
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
