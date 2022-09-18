@@ -20,6 +20,14 @@
                     <li><a href="" class="hover:text-gray-400">Coming Soon</a></li>
                 </ul>
             </div>
+            <div class="flex items-center">
+                <div class="relative">
+                    <input type="text" class="bg-gray-800 text-sm rounded-full px-3 py-1" placeholder="Search...">
+                </div>
+                <div class="ml-6">
+                    <a href=""><img src="/avatar.jpg" alt="avatar" class="rounded-full w-8"></a>
+                </div>
+            </div>
         </nav>
     </header>
     </body>
