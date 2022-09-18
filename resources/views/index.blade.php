@@ -103,5 +103,14 @@
                 <div class="text-gray-400 mt-1">Playstation 4</div>
             </div>
         </div>
-    </div>
+
+        <div class="flex my-10">
+            <div class="recently-reviewed w-3/4 mr-32">
+                It is a long established fact that a reader will be distracted by the readable content of a page
+            </div>
+            <div class="most-anticipated w-1/4">
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+            </div>
+        </div>
+    </div><!-- end container -->
 @endsection
