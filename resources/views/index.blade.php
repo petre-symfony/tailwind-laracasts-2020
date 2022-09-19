@@ -122,7 +122,7 @@
                                 Final Fantasy 7 Remake
                             </a>
                             <div class="text-gray-400 mt-1">Playstation 4</div>
-                            <p class="mt-6 text-gray-400">
+                            <p class="mt-6 text-gray-400 hidden lg:block">
                                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
                             </p>
                         </div>
@@ -141,7 +141,7 @@
                                 Doom Eternal
                             </a>
                             <div class="text-gray-400 mt-1">Playstation 4</div>
-                            <p class="mt-6 text-gray-400">
+                            <p class="mt-6 text-gray-400 hidden lg:block">
                                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
                             </p>
                         </div>
@@ -160,7 +160,7 @@
                                 Animal Crossings
                             </a>
                             <div class="text-gray-400 mt-1">Playstation 4</div>
-                            <p class="mt-6 text-gray-400">
+                            <p class="mt-6 text-gray-400 hidden lg:block">
                                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
                             </p>
                         </div>
