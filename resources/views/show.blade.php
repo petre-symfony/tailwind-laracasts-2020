@@ -65,6 +65,21 @@
                 <p class="mt-12">
                     On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour
                 </p>
+
+                <div class="mt-12">
+                    <button
+                        class="
+                            flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600
+                            rounded transition ease-in-out duration-150
+                        "
+                    >
+                        <svg class="w-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                        </svg>
+                        <span class="ml-2">Play Trailer</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
