@@ -24,14 +24,14 @@
                         <div class="ml-4 text-xs">Member <br> Score</div>
                     </div>
 
-                    <div class="flex items-center">
+                    <div class="flex items-center ml-12">
                         <div class="w-16 h-16 bg-gray-700 rounded-full">
                             <div class="font-semibold text-xs flex justify-center items-center h-full">92%</div>
                         </div>
                         <div class="ml-4 text-xs">Critic <br> Score</div>
                     </div>
 
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 ml-12">
                         <div class="w-8 h-8 bg-gray-700 rounded-full flex justify-center items-center">
                             <a href="" class="hover:text-gray-400">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 16 17" fill="none">
