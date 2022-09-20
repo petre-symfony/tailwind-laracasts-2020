@@ -81,6 +81,41 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div><!-- end game details -->
+        <div class="images-container border-b border-gray-800 pb-12 mt-8">
+            <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Images</h2>
+            <div class="grid grid-cols-3 gap-12 mt-8">
+                <div>
+                    <a href="">
+                        <img src="/screenshot1.jpg" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="/screenshot2.jpg" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="/screenshot3.jpg" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="/screenshot4.jpg" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="/screenshot5.jpg" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="/screenshot6.jpg" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                </div>
+            </div>
+        </div><!-- end images container -->
     </div>
 @endsection
