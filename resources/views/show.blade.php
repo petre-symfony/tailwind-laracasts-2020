@@ -7,7 +7,7 @@
                 <img src="/ff7.jpg" alt="cover">
             </div>
             <div class="lg:ml-12  lg:mr-64">
-                <h2 class="font-semibold text-4xl">Final Fantasy 4 Remake</h2>
+                <h2 class="font-semibold text-4xl leading-tight mt-1">Final Fantasy 4 Remake</h2>
                 <div class="text-gray-400">
                     <span>Adventure, RPG</span>
                     &middot;
