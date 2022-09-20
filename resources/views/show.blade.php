@@ -31,7 +31,7 @@
                         <div class="ml-4 text-xs">Critic <br> Score</div>
                     </div>
 
-                    <div class="flex items-center space-x-4 ml-12">
+                    <div class="flex items-center space-x-4 mt-4 lg:mt-0 lg:ml-12">
                         <div class="w-8 h-8 bg-gray-700 rounded-full flex justify-center items-center">
                             <a href="" class="hover:text-gray-400">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 16 17" fill="none">
