@@ -16,7 +16,7 @@
                     <span>Playstation 4</span>
                 </div>
 
-                <div class="flex flex-wrap items-center mt-8 space-x-12">
+                <div class="flex flex-wrap items-center mt-8">
                     <div class="flex items-center">
                         <div class="w-16 h-16 bg-gray-700 rounded-full">
                             <div class="font-semibold text-xs flex justify-center items-center h-full">90%</div>
