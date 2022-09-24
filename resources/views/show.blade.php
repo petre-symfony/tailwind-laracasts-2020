@@ -105,7 +105,7 @@
                     </button> --}}
                     <a
                         class="
-                            flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600
+                            inline-flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600
                             rounded transition ease-in-out duration-150
                         "
                     >
