@@ -103,7 +103,7 @@
                         </svg>
                         <span class="ml-2">Play Trailer</span>
                     </button> --}}
-                    <a
+                    <a href="https://youtube.com/watch/{{ $game['videos'][0]['video_id'] }}"
                         class="
                             inline-flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600
                             rounded transition ease-in-out duration-150
