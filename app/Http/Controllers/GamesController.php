@@ -72,7 +72,12 @@ class GamesController extends Controller {
     public function show($slug) {
         $game = Http::withHeaders(config('services.igdb'))
             ->withBody(
-                "fields *;  where slug=\"{$slug}\";",
+                "fields name, cover.url, first_release_date, age_ratings.rating, platforms.abbreviation,
+                slug, involved_companies.company.name, genres.name, aggregated_rating, summary, websites.*,
+                videos.*, screenshots.*, similar_games.cover.url, similar_games.name, similar_games.rating,
+                similar_games.platforms.abbreviation, similar_games.slug;
+                where slug=\"{$slug}\";
+                ",
                 "text/plain"
             )
             ->post('https://api.igdb.com/v4/games')
@@ -82,7 +87,7 @@ class GamesController extends Controller {
         abort_if(!$game, 404);
 
         dump($game);
-        
+
         return view('show', [
             'game' => $game[0]
         ]);
