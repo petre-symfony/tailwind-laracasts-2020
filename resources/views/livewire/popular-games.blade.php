@@ -29,9 +29,9 @@
     @empty --}}
         <div class="game mt-8">
             <div class="relative inline-block">
-                <div>img goes here</div>
+                <div class="bg-gray-800 w-44 h-56">img goes here</div>
             </div>
-            <div class="block text-base font-semibold leading-tight hover:text-gray-400 mt-8">
+            <div class="block text-base font-semibold leading-tight hover:text-gray-400 mt-4">
                 title goes here
             </div>
             <div class="text-gray-400 mt-1">
