@@ -1,5 +1,5 @@
 <div wire:init="loadRecentlyReviewed" class="recently-reviewed-container space-y-12 mt-8">
-    {{-- @forelse($recentlyReviewedGames as $game)
+    @forelse($recentlyReviewedGames as $game)
         <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
             <div class="relative flex-none">
                 <a href="#">
@@ -29,7 +29,7 @@
                 </p>
             </div>
         </div>
-    @empty --}}
+    @empty
         @foreach (range(1, 3) as $game)
         <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
             <div class="relative flex-none">
@@ -47,5 +47,5 @@
             </div>
         </div>
         @endforeach
-    {{-- @endforelse --}}
+    @endforelse
 </div>
