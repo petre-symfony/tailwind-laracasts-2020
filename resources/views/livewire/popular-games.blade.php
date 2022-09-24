@@ -27,6 +27,7 @@
             @endif
         </div>
     @empty --}}
+        @foreach (range(1, 12) as $game)
         <div class="game mt-8">
             <div class="relative inline-block">
                 <div class="bg-gray-800 w-44 h-56">img goes here</div>
@@ -38,5 +39,6 @@
                 PS4, PC, Switch
             </div>
         </div>
+        @endforeach
     {{-- @endforelse --}}
 </div>
