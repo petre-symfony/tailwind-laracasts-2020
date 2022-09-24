@@ -9,24 +9,48 @@
             <div class="lg:ml-12  lg:mr-64">
                 <h2 class="font-semibold text-4xl leading-tight mt-1">{{ $game['name'] }}</h2>
                 <div class="text-gray-400">
-                    <span>Adventure, RPG</span>
+                    <span>
+                        @foreach($game['genres'] as $genre)
+                            {{ $genre['name'] }},
+                        @endforeach
+                    </span>
                     &middot;
-                    <span>Square Enix</span>
+                    <span>
+                        {{ $game['involved_companies'][0]['company']['name'] }}
+                    </span>
                     &middot;
-                    <span>Playstation 4</span>
+                    <span>
+                        @foreach($game['platforms'] as $platform)
+                            @if (isset($platform['abbreviation']))
+                                {{ $platform['abbreviation'] }},
+                            @endif
+                        @endforeach
+                    </span>
                 </div>
 
                 <div class="flex flex-wrap items-center mt-8">
                     <div class="flex items-center">
                         <div class="w-16 h-16 bg-gray-700 rounded-full">
-                            <div class="font-semibold text-xs flex justify-center items-center h-full">90%</div>
+                            <div class="font-semibold text-xs flex justify-center items-center h-full">
+                                @if(isset($game['rating']))
+                                    {{ round($game['rating']).'%' }}
+                                @else
+                                    0%
+                                @endif
+                            </div>
                         </div>
                         <div class="ml-4 text-xs">Member <br> Score</div>
                     </div>
 
                     <div class="flex items-center ml-12">
                         <div class="w-16 h-16 bg-gray-700 rounded-full">
-                            <div class="font-semibold text-xs flex justify-center items-center h-full">92%</div>
+                            <div class="font-semibold text-xs flex justify-center items-center h-full">
+                                @if(isset($game['aggregated_rating']))
+                                    {{ round($game['aggregated_rating']).'%' }}
+                                @else
+                                    0%
+                                @endif
+                            </div>
                         </div>
                         <div class="ml-4 text-xs">Critic <br> Score</div>
                     </div>
@@ -63,7 +87,7 @@
                     </div>
                 </div>
                 <p class="mt-12">
-                    On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour
+                    {{ $game['summary'] }}
                 </p>
 
                 <div class="mt-12">

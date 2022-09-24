@@ -75,7 +75,7 @@ class GamesController extends Controller {
                 "fields name, cover.url, first_release_date, age_ratings.rating, platforms.abbreviation,
                 slug, involved_companies.company.name, genres.name, aggregated_rating, summary, websites.*,
                 videos.*, screenshots.*, similar_games.cover.url, similar_games.name, similar_games.rating,
-                similar_games.platforms.abbreviation, similar_games.slug;
+                similar_games.platforms.abbreviation, similar_games.slug, rating;
                 where slug=\"{$slug}\";
                 ",
                 "text/plain"
