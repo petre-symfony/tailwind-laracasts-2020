@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class GamesController extends Controller {
     /**
@@ -13,19 +14,18 @@ class GamesController extends Controller {
      */
     public function index() {
 
-        $client = new Client();
-        $response = $client->request('POST', 'https://api.igdb.com/v4/games', [
-            'headers' => config('services.igdb'),
-            'body' => '
-                fields name, slug;
-                sort slug desc;
-                limit 20;
-            '
-        ]);
+        $games = Http::withHeaders(config('services.igdb'))
+            ->withBody(
+                "fields name, slug, total_rating_count;
+                sort total_rating_count desc;
+                total_rating_count > 5;
+                limit 20",
+                "text/plain"
+            )
+            ->post('https://api.igdb.com/v4/games')
+            ->json();
 
-
-        $body = $response->getBody();
-        dd(json_decode($body));
+        dd(json_decode($games));
     }
 
     /**
