@@ -4,27 +4,21 @@
     <div class="container mx-auto px-4">
         <div class="game-details border-b border-gray-800 pb-12 flex flex-col lg:flex-row">
             <div class="flex-none">
-                <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}" alt="cover">
+                <img src="{{ $game['coverImageUrl'] }}" alt="cover">
             </div>
             <div class="lg:ml-12  lg:mr-64">
                 <h2 class="font-semibold text-4xl leading-tight mt-1">{{ $game['name'] }}</h2>
                 <div class="text-gray-400">
                     <span>
-                        @foreach($game['genres'] as $genre)
-                            {{ $genre['name'] }},
-                        @endforeach
+                        {{ $game['genres'] }}
                     </span>
                     &middot;
                     <span>
-                        {{ $game['involved_companies'][0]['company']['name'] }}
+                        {{ $game['involvedCompanies'] }}
                     </span>
                     &middot;
                     <span>
-                        @foreach($game['platforms'] as $platform)
-                            @if (isset($platform['abbreviation']))
-                                {{ $platform['abbreviation'] }},
-                            @endif
-                        @endforeach
+                        {{ $game['platforms'] }}
                     </span>
                 </div>
 
@@ -32,11 +26,7 @@
                     <div class="flex items-center">
                         <div class="w-16 h-16 bg-gray-700 rounded-full">
                             <div class="font-semibold text-xs flex justify-center items-center h-full">
-                                @if(isset($game['rating']))
-                                    {{ round($game['rating']).'%' }}
-                                @else
-                                    0%
-                                @endif
+                                {{ $game['memberRating'] }}
                             </div>
                         </div>
                         <div class="ml-4 text-xs">Member <br> Score</div>
@@ -45,11 +35,7 @@
                     <div class="flex items-center ml-12">
                         <div class="w-16 h-16 bg-gray-700 rounded-full">
                             <div class="font-semibold text-xs flex justify-center items-center h-full">
-                                @if(isset($game['aggregated_rating']))
-                                    {{ round($game['aggregated_rating']).'%' }}
-                                @else
-                                    0%
-                                @endif
+                                {{ $game['criticRating'] }}
                             </div>
                         </div>
                         <div class="ml-4 text-xs">Critic <br> Score</div>
@@ -103,7 +89,7 @@
                         </svg>
                         <span class="ml-2">Play Trailer</span>
                     </button> --}}
-                    <a href="https://youtube.com/watch/{{ $game['videos'][0]['video_id'] }}"
+                    <a href="{{ $game['trailer'] }}"
                         class="
                             inline-flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600
                             rounded transition ease-in-out duration-150
@@ -123,8 +109,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8">
                 @foreach($game['screenshots'] as $screenshot)
                 <div>
-                    <a href="{{ Str::replaceFirst('thumb', 'screenshot_huge', $screenshot['url']) }}">
-                        <img src="{{ Str::replaceFirst('thumb', 'screenshot_big', $screenshot['url']) }}" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                    <a href="{{ $screenshot['huge'] }}">
+                        <img src="{{ $screenshot['big'] }}" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
                 </div>
                 @endforeach
@@ -138,13 +124,13 @@
                     <div class="relative inline-block">
                         @if(isset($game['cover']))
                         <a href="#">
-                            <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}" alt="game cover" class="hover:opacity-75 transition ease-in-out duration-150">
+                            <img src="{{ $game['coverImageUrl'] }}" alt="game cover" class="hover:opacity-75 transition ease-in-out duration-150">
                         </a>
                         @endif
                         @if(isset($game['rating']))
                         <div class="absolute bottom-0 right-0 w-16 h-16 bg-gray-800 rounded-full"  style="right: -20px; bottom: -20px">
                             <div class="font-semibold text-xs flex justify-center items-center h-full">
-                                {{ round($game['rating']).'%' }}
+                                {{ $game['rating'] }}
                             </div>
                         </div>
                         @endif
@@ -154,11 +140,7 @@
                     </a>
                     <div class="text-gray-400 mt-1">
                         @if(isset($game['platforms']))
-                            @foreach($game['platforms'] as $platform)
-                                @if (isset($platform['abbreviation']))
-                                    {{ $platform['abbreviation'] }},
-                                @endif
-                            @endforeach
+                            {{ $game['platforms'] }}
                         @endif
                     </div>
                 </div>

@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class GamesController extends Controller {
     /**
@@ -88,7 +89,7 @@ class GamesController extends Controller {
 
 
         return view('show', [
-            'game' => $game[0]
+            'game' => $this->formatGameForView($game[0])
         ]);
     }
 
@@ -121,5 +122,34 @@ class GamesController extends Controller {
      */
     public function destroy($id) {
         //
+    }
+
+    private function formatGameForView($game){
+        $temp = collect($game)->merge([
+            'coverImageUrl' => Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']),
+            'genres' => collect($game['genres'])->pluck('name')->implode(', '),
+            'involvedCompanies' => $game['involved_companies'][0]['company']['name'],
+            'platforms' => collect($game['platforms'])->pluck('abbreviation')->implode(', '),
+            'memberRating' => isset($game['rating']) ? round($game['rating']).'%' : '0%',
+            'criticRating' => isset($game['aggregated_rating']) ? round($game['aggregated_rating']).'%' : '0%',
+            'trailer' => 'https://youtube.com/watch/' . $game['videos'][0]['video_id'],
+            'screenshots' => collect($game['screenshots'])->map(function($screenshot) {
+                return [
+                    'huge' => Str::replaceFirst('thumb', 'screenshot_huge', $screenshot['url']),
+                    'big' => Str::replaceFirst('thumb', 'screenshot_big', $screenshot['url'])
+                ];
+            })->take(9),
+            'similar_games' => collect($game['similar_games'])->map(function($game){
+                return collect($game)->merge([
+                    'coverImageUrl' => isset($game['cover']) ? Str::replaceFirst('thumb', 'cover_big', $game['cover']['url'])
+                        : 'https://via.placeholder.com/264x352',
+                    'rating' => isset($game['rating']) ? round($game['rating']).'%' : null,
+                    'platforms' => isset($game['platforms']) ? collect($game['platforms'])->pluck('abbreviation')->implode(', ')
+                        : null
+                ]);
+            })->take(6)
+        ]);
+
+        return $temp;
     }
 }
