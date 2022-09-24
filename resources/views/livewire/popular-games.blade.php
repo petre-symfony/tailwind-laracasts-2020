@@ -1,5 +1,5 @@
 <div wire:init="loadPopularGames" class="popular-games text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-12 border-b border-gray-800 pb-16">
-    @forelse($popularGames as $game)
+    {{--@forelse($popularGames as $game)
         <div class="game mt-8">
             <div class="relative inline-block">
                 <a href="#">
@@ -26,7 +26,17 @@
                 </div>
             @endif
         </div>
-    @empty
-        <div class="spinner mt-8">Loading...</div>
-    @endforelse
+    @empty --}}
+        <div class="game mt-8">
+            <div class="relative inline-block">
+                <div>img goes here</div>
+            </div>
+            <div class="block text-base font-semibold leading-tight hover:text-gray-400 mt-8">
+                title goes here
+            </div>
+            <div class="text-gray-400 mt-1">
+                PS4, PC, Switch
+            </div>
+        </div>
+    {{-- @endforelse --}}
 </div>
