@@ -32,10 +32,10 @@
     @empty --}}
         <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
             <div class="relative flex-none">
-                <div>image goes here</div>
+                <div class="bg-gray-700 w-32 lg:w-48 h-40 lg:h-56"></div>
             </div>
             <div class="ml-12">
-                <div class="block text-lg font-semibold leading-tight hover:text-gray-400 mt-4">
+                <div class="inline-block text-lg font-semibold leading-tight text-transparent bg-gray-700 rounded mt-4">
                     title goes here
                 </div>
                 <div class="text-gray-400 mt-1">
