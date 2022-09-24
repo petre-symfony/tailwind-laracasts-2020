@@ -86,7 +86,6 @@ class GamesController extends Controller {
 
         abort_if(!$game, 404);
 
-        dump($game);
 
         return view('show', [
             'game' => $game[0]
