@@ -125,7 +125,7 @@ class GamesController extends Controller {
     }
 
     private function formatGameForView($game){
-        $temp = collect($game)->merge([
+        return collect($game)->merge([
             'coverImageUrl' => Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']),
             'genres' => collect($game['genres'])->pluck('name')->implode(', '),
             'involvedCompanies' => $game['involved_companies'][0]['company']['name'],
@@ -147,9 +147,19 @@ class GamesController extends Controller {
                     'platforms' => isset($game['platforms']) ? collect($game['platforms'])->pluck('abbreviation')->implode(', ')
                         : null
                 ]);
-            })->take(6)
+            })->take(6),
+            'social' => [
+                'website' => collect($game['websites'])->first(),
+                'facebook' => collect($game['websites'])->filter(function ($website) {
+                    return Str::contains($website['url'], 'facebook');
+                })->first(),
+                'twitter' => collect($game['websites'])->filter(function ($website) {
+                    return Str::contains($website['url'], 'twitter');
+                })->first(),
+                'instagram' => collect($game['websites'])->filter(function ($website) {
+                    return Str::contains($website['url'], 'instagram');
+                })->first()
+            ]
         ]);
-
-        return $temp;
     }
 }
