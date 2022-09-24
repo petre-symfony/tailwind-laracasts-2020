@@ -6,6 +6,7 @@
 
         <title>Laravel Video Games</title>
         <link rel="stylesheet" href="/css/app.css">
+        @livewireStyles
     </head>
     <body class="bg-gray-900 text-white">
     <header class="border-b border-gray-800">
@@ -55,5 +56,6 @@
             Powered By <a href="" class="underline hover:text-gray-400">IGDB API</a>
         </div>
     </footer>
+    @livewireScripts
     </body>
 </html>
