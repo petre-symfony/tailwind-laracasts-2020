@@ -11,10 +11,10 @@
         </div>
     @empty --}}
         <div class="game flex">
-            <div>img</div>
+            <div class="bg-gray-800 w-16 h-20 flex-none"></div>
             <div class="ml-4">
-                <a href="#" class="hover:text-gray-300">Title goes here</a>
-                <div class="text-gray-400 text-sm mt-1">Sept 14, 2022</div>
+                <div class="text-transparent bg-gray-700 rounded leading-tight">Title goes here today</div>
+                <div class="text-transparent bg-gray-700 rounded inline-block text-sm mt-4">Sept 14, 2022</div>
             </div>
         </div>
     {{-- @endforelse --}}
