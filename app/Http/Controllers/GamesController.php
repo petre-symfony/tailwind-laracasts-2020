@@ -87,7 +87,6 @@ class GamesController extends Controller {
         ;
 
         return view('index', [
-            'popularGames' => $popularGames,
             'recentlyReviewedGames' => $recentlyReviewed,
             'mostAnticipatedGames' => $mostAnticipatedGames,
             'comingSoonGames' => $comingSoonGames
