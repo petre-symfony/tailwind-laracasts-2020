@@ -1,5 +1,5 @@
 <div wire:init="loadRecentlyReviewed" class="recently-reviewed-container space-y-12 mt-8">
-    @forelse($recentlyReviewedGames as $game)
+    {{-- @forelse($recentlyReviewedGames as $game)
         <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
             <div class="relative flex-none">
                 <a href="#">
@@ -29,7 +29,22 @@
                 </p>
             </div>
         </div>
-    @empty
-        <div class="spinner mt-8">Loading...</div>
-    @endforelse
+    @empty --}}
+        <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
+            <div class="relative flex-none">
+                <div>image goes here</div>
+            </div>
+            <div class="ml-12">
+                <div class="block text-lg font-semibold leading-tight hover:text-gray-400 mt-4">
+                    title goes here
+                </div>
+                <div class="text-gray-400 mt-1">
+                    PS4, Switch, PC
+                </div>
+                <p class="mt-6 text-gray-400 hidden lg:block">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                </p>
+            </div>
+        </div>
+    {{-- @endforelse --}}
 </div>
