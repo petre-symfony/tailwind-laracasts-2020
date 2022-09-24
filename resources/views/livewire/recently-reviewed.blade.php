@@ -38,12 +38,11 @@
                 <div class="inline-block text-lg font-semibold leading-tight text-transparent bg-gray-700 rounded mt-4">
                     title goes here
                 </div>
-                <div class="text-gray-400 mt-1">
-                    PS4, Switch, PC
+                <div class="mt-8 space-y-4 hidden lg:block">
+                    <span class="text-transparent bg-gray-700 rounded inline-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </span>
+                    <span class="text-transparent bg-gray-700 rounded inline-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </span>
+                    <span class="text-transparent bg-gray-700 rounded inline-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </span>
                 </div>
-                <p class="mt-6 text-gray-400 hidden lg:block">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                </p>
             </div>
         </div>
     {{-- @endforelse --}}
