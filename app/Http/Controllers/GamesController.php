@@ -17,7 +17,7 @@ class GamesController extends Controller {
         $before = Carbon::now()->subMonths(2)->timestamp;
         $after = Carbon::now()->addMonths(2)->timestamp;
 
-        $games = Http::withHeaders(config('services.igdb'))
+        $popularGames = Http::withHeaders(config('services.igdb'))
             ->withBody(
                 "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
                 where platforms = (48, 49, 130, 6)
@@ -34,10 +34,8 @@ class GamesController extends Controller {
             ->json()
         ;
 
-        dump($games);
-
         return view('index', [
-            'games' => $games
+            'games' => $popularGames
         ]);;
     }
 
