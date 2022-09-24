@@ -14,83 +14,34 @@ class GamesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $before = Carbon::now()->subMonths(2)->timestamp;
-        $after = Carbon::now()->addMonths(2)->timestamp;
-        $current = Carbon::now()->timestamp;
-        $afterFourMonths = Carbon::now()->addMonths(4)->timestamp;
+        // For Multi Query
+        // $client = new \GuzzleHttp\Client(['base_uri' => 'https://api-v3.igdb.com/']);
 
-        $popularGames = Http::withHeaders(config('services.igdb'))
-            ->withBody(
-                "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
-                where platforms = (48, 49, 130, 6)
-                & (first_release_date > {$before}
-                & first_release_date < {$after}
-                & cover != null
-                & total_rating_count > 5
-                );
-                sort total_rating_count;
-                limit 12;",
-                "text/plain"
-            )
-            ->post('https://api.igdb.com/v4/games')
-            ->json()
-        ;
+        // $response = $client->request('POST', 'multiquery', [
+        //     'headers' => [
+        //         'user-key' => env('IGDB_KEY'),
+        //     ],
+        //     'body' => '
+        //         query games "Playstation" {
+        //             fields name, popularity, platforms.name, first_release_date;
+        //             where platforms = {6,48,130,49};
+        //             sort popularity desc;
+        //             limit 2;
+        //         };
 
-        $recentlyReviewed = Http::withHeaders(config('services.igdb'))
-            ->withBody(
-                "fields name, cover.url, first_release_date, rating_count, platforms.abbreviation, rating, slug, summary;
-                where platforms = (48, 49, 130, 6)
-                & (first_release_date > {$before}
-                & first_release_date < {$current}
-                & cover != null
-                & rating_count > 5
-                );
-                sort rating_count desc;
-                limit 3;",
-                "text/plain"
-            )
-            ->post('https://api.igdb.com/v4/games')
-            ->json()
-        ;
+        //         query games "Switch" {
+        //             fields name, popularity, platforms.name, first_release_date;
+        //             where platforms = {6,48,130,49};
+        //             sort popularity desc;
+        //             limit 6;
+        //         };
+        //         '
+        // ]);
 
-        $mostAnticipatedGames = Http::withHeaders(config('services.igdb'))
-            ->withBody(
-                "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
-                where platforms = (48, 49, 130, 6)
-                & (first_release_date > {$current}
-                & first_release_date < {$afterFourMonths}
-                & cover != null
-                & age_ratings.rating > 8
-                );
-                sort total_rating_count;
-                limit 4;",
-                "text/plain"
-            )
-            ->post('https://api.igdb.com/v4/games')
-            ->json()
-        ;
+        // $body = $response->getBody();
+        // dd(json_decode($body));
 
-        $comingSoonGames = Http::withHeaders(config('services.igdb'))
-            ->withBody(
-                "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
-                where platforms = (48, 49, 130, 6)
-                & (first_release_date > {$current}
-                & cover != null
-                & age_ratings.rating > 4
-                );
-                sort first_release_date asc;
-                limit 4;",
-                "text/plain"
-            )
-            ->post('https://api.igdb.com/v4/games')
-            ->json()
-        ;
-
-        return view('index', [
-            'recentlyReviewedGames' => $recentlyReviewed,
-            'mostAnticipatedGames' => $mostAnticipatedGames,
-            'comingSoonGames' => $comingSoonGames
-        ]);
+        return view('index');
     }
 
     /**
