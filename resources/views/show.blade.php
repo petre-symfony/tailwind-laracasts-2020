@@ -26,55 +26,25 @@
                     <div class="flex items-center">
                         <div id="member-rating" class="w-16 h-16 bg-gray-700 rounded-full relative text-sm">
                             @push('scripts')
-                            <script>
-                                // progressbar.js@1.0.0 version is used
-                                // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-                                const progressBarContainer = document.getElementById('member-rating');
-                                var bar = new ProgressBar.Circle(progressBarContainer, {
-                                    color: 'white',
-                                    // This has to be the same size as the maximum width to
-                                    // prevent clipping
-                                    strokeWidth: 6,
-                                    trailWidth: 3,
-                                    trailColor: '#4A5568',
-                                    easing: 'easeInOut',
-                                    duration: 2500,
-                                    text: {
-                                        autoStyleContainer: false
-                                    },
-                                    from: { color: '#488878', width: 6 },
-                                    to: { color: '#488878', width: 6 },
-                                    // Set default step function for all animate calls
-                                    step: function(state, circle) {
-                                        circle.path.setAttribute('stroke', state.color);
-                                        circle.path.setAttribute('stroke-width', state.width);
-
-                                        var value = Math.round(circle.value() * 100);
-                                        if (value === 0) {
-                                            circle.setText('0%');
-                                        } else {
-                                            circle.setText(value+'%');
-                                        }
-
-                                    }
-                                });
-
-                                bar.animate(.5);  // Number from 0.0 to 1.0
-                            </script>
+                                @include('_rating', [
+                                    'slug' => 'member-rating',
+                                    'rating' => $game['memberRating'],
+                                    'event' => null
+                                ])
                             @endpush
-                            {{--<div class="font-semibold text-xs flex justify-center items-center h-full">
-                                {{ $game['memberRating'] }}
-                            </div> --}}
                         </div>
                         <div class="ml-4 text-xs">Member <br> Score</div>
                     </div>
 
                     <div class="flex items-center ml-12">
-                        <div class="w-16 h-16 bg-gray-700 rounded-full">
-
-                            <div class="font-semibold text-xs flex justify-center items-center h-full">
-                                {{ $game['criticRating'] }}
-                            </div>
+                        <div id="critic-rating" class="w-16 h-16 bg-gray-700 rounded-full relative text-sm">
+                            @push('scripts')
+                                @include('_rating', [
+                                    'slug' => 'critic-rating',
+                                    'rating' => $game['criticRating'],
+                                    'event' => null
+                                ])
+                            @endpush
                         </div>
                         <div class="ml-4 text-xs">Critic <br> Score</div>
                     </div>

@@ -130,8 +130,8 @@ class GamesController extends Controller {
             'genres' => collect($game['genres'])->pluck('name')->implode(', '),
             'involvedCompanies' => $game['involved_companies'][0]['company']['name'],
             'platforms' => collect($game['platforms'])->pluck('abbreviation')->implode(', '),
-            'memberRating' => isset($game['rating']) ? round($game['rating']).'%' : '0%',
-            'criticRating' => isset($game['aggregated_rating']) ? round($game['aggregated_rating']).'%' : '0%',
+            'memberRating' => isset($game['rating']) ? round($game['rating']) : '0',
+            'criticRating' => isset($game['aggregated_rating']) ? round($game['aggregated_rating']) : '0',
             'trailer' => 'https://youtube.com/watch/' . $game['videos'][0]['video_id'],
             'screenshots' => collect($game['screenshots'])->map(function($screenshot) {
                 return [
