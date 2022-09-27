@@ -20,8 +20,8 @@
 
 @push('scripts')
     <script>
-        window.livewire.on('postAdded', postId => {
-            console.log('A post was added with the id of: ' + postId)
+        window.livewire.on('gameWithRatingAdded', params => {
+            console.log('A post was added with the id of: ' + params.slug)
         })
     </script>
 @endpush
