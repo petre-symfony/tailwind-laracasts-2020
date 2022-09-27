@@ -34,8 +34,14 @@ class PopularGames extends Component {
                 ->json()
             ;
         });
-
+        
         $this->popularGames = $this->formatForView($popularGamesUnformatted);
+
+        collect($this->popularGames)->filter(function($game){
+            return $game['rating'];
+        })->each(function($game){
+            $this->emit('postAdded', 2);
+        });
 
     }
 
