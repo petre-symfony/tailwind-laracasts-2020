@@ -45,7 +45,6 @@ class PopularGames extends Component {
                 'rating' => $game['rating'] / 100
             ]);
         });
-
     }
 
     public function render() {
