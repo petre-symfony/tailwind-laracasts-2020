@@ -15,14 +15,13 @@ class SearchDropdown extends Component {
             ->withBody(
                     "search \"{$this->search}\";
                     fields name, slug, cover.url;
-                    limit 6;",
+                    limit 8;",
                 "text/plain"
             )
             ->post('https://api.igdb.com/v4/games')
             ->json()
         ;
 
-        dump($this->searchResults);
         return view('livewire.search-dropdown');
     }
 }

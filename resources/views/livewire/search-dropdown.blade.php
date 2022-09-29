@@ -21,12 +21,18 @@
 
         <div class="absolute z-50 bg-gray-800 text-xs rounded w-64 mt-2">
             <ul>
+                @foreach($searchResults as $game)
                 <li class="border-b border-gray-700">
-                    <a href="" class="block hover:bg-gray-700 flex items-csnter transition ease-in-out duration-150 px-3 py-3">
-                        <img class="w-10" src="https://images.igdb.com/igdb/image/upload/t_cover_small/co4tgy.jpg" alt="cover">
-                        <span class="ml-4">Horgihugh and Friends</span>
+                    <a href="{{ route('games.show', $game['slug']) }}" class="block hover:bg-gray-700 flex items-csnter transition ease-in-out duration-150 px-3 py-3">
+                        @if (isset($game['cover']))
+                            <img class="w-10" src="{{ Str::replaceFirst('thumb', 'cover_small', $game['cover']['url']) }}" alt="cover">
+                        @else
+                            <img class="w-10" src="https://via.placeholder.com/264x352" alt="">
+                        @endif
+                        <span class="ml-4">{{ $game['name'] }}</span>
                     </a>
                 </li>
+                @endforeach
             </ul>
         </div>
     </div>
