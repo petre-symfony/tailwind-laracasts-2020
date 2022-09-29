@@ -19,13 +19,13 @@
 
         <div class="absolute z-50 bg-gray-800 text-xs rounded w-64 mt-2">
             <ul>
-                <li>
+                <li class="border-b border-gray-700">
                     <a href="" class="block hover:bg-gray-700 px-3 py-3">Game 1</a>
                 </li>
-                <li>
+                <li class="border-b border-gray-700">
                     <a href="" class="block hover:bg-gray-700 px-3 py-3">Game 1</a>
                 </li>
-                <li>
+                <li class="border-b border-gray-700">
                     <a href="" class="block hover:bg-gray-700 px-3 py-3">Game 1</a>
                 </li>
             </ul>
