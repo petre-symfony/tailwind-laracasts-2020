@@ -20,13 +20,10 @@
         <div class="absolute z-50 bg-gray-800 text-xs rounded w-64 mt-2">
             <ul>
                 <li class="border-b border-gray-700">
-                    <a href="" class="block hover:bg-gray-700 px-3 py-3">Game 1</a>
-                </li>
-                <li class="border-b border-gray-700">
-                    <a href="" class="block hover:bg-gray-700 px-3 py-3">Game 1</a>
-                </li>
-                <li class="border-b border-gray-700">
-                    <a href="" class="block hover:bg-gray-700 px-3 py-3">Game 1</a>
+                    <a href="" class="block hover:bg-gray-700 flex items-csnter transition ease-in-out duration-150 px-3 py-3">
+                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_small/co4tgy.jpg" alt="cover">
+                        <span class="ml-4">Horgihugh and Friends</span>
+                    </a>
                 </li>
             </ul>
         </div>
