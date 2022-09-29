@@ -1,12 +1,15 @@
 <div>
     <div class="relative">
         <input type="text"
+            wire:model.debounce.300ms="search"
             class="
                 bg-gray-800 text-sm rounded-full px-3 py-1
                 focus:outline-none focus:ring w-64 pl-8
             "
             placeholder="Search..."
         >
+
+        {{ dump($search) }}
         <div class="absolute top-0 flex items-center h-full ml-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24" stroke-width="1.5"
@@ -21,7 +24,7 @@
             <ul>
                 <li class="border-b border-gray-700">
                     <a href="" class="block hover:bg-gray-700 flex items-csnter transition ease-in-out duration-150 px-3 py-3">
-                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_small/co4tgy.jpg" alt="cover">
+                        <img class="w-10" src="https://images.igdb.com/igdb/image/upload/t_cover_small/co4tgy.jpg" alt="cover">
                         <span class="ml-4">Horgihugh and Friends</span>
                     </a>
                 </li>
