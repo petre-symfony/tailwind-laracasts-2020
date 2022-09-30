@@ -7,6 +7,7 @@
                 focus:outline-none focus:ring w-64 pl-8
             "
             placeholder="Search..."
+            @focus="isVisible = true"
         >
 
         <div class="absolute top-0 flex items-center h-full ml-2">
