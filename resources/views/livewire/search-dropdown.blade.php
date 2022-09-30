@@ -1,5 +1,5 @@
 <div>
-    <div class="relative">
+    <div class="relative" x-data="{ isVisible: true }" @click.away="isVisible = false">
         <input type="text"
             wire:model.debounce.300ms="search"
             class="
@@ -22,7 +22,7 @@
         <div wire:loading class="spinner top-0 right-0 mr-4 mt-3" style="position: absolute"></div>
 
         @if(strlen($search) >= 2)
-            <div class="absolute z-50 bg-gray-800 text-xs rounded w-64 mt-2">
+            <div class="absolute z-50 bg-gray-800 text-xs rounded w-64 mt-2" x-show="isVisible">
                 @if(count($searchResults) > 0)
                     <ul>
                         @foreach($searchResults as $game)
