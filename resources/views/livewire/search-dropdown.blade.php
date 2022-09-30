@@ -6,7 +6,14 @@
                 bg-gray-800 text-sm rounded-full px-3 py-1
                 focus:outline-none focus:ring w-64 pl-8
             "
-            placeholder="Search..."
+            placeholder="Search (Press '/' to focus)"
+            x-ref="search"
+            @keydown.window="
+                if(event.keyCode === 191){
+                    event.preventDefault();
+                    $refs.search.focus();
+                }
+            "
             @focus="isVisible = true"
             @keydown.escape.window = "isVisible = false"
             @keydown = "isVisible = true"
