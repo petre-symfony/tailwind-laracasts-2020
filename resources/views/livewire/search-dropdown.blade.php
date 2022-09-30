@@ -9,6 +9,7 @@
             placeholder="Search..."
             @focus="isVisible = true"
             @keydown.escape.window = "isVisible = false"
+            @keydown = "isVisible = true"
         >
 
         <div class="absolute top-0 flex items-center h-full ml-2">
