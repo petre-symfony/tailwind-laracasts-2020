@@ -10,6 +10,7 @@
             @focus="isVisible = true"
             @keydown.escape.window = "isVisible = false"
             @keydown = "isVisible = true"
+            @keydown.shift.tab = "isVisible = false"
         >
 
         <div class="absolute top-0 flex items-center h-full ml-2">
@@ -30,7 +31,13 @@
                     <ul>
                         @foreach($searchResults as $game)
                         <li class="border-b border-gray-700">
-                            <a href="{{ route('games.show', $game['slug']) }}" class="block hover:bg-gray-700 flex items-csnter transition ease-in-out duration-150 px-3 py-3">
+                            <a href="{{ route('games.show', $game['slug']) }}"
+                                class="block hover:bg-gray-700 flex items-center transition
+                                    ease-in-out duration-150 px-3 py-3"
+                                @if ($loop->last)
+                                    @keydown.tab = "isVisible = false"
+                                @endif
+                            >
                                 @if (isset($game['cover']))
                                     <img class="w-10" src="{{ Str::replaceFirst('thumb', 'cover_small', $game['cover']['url']) }}" alt="cover">
                                 @else
