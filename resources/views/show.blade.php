@@ -136,7 +136,7 @@
                                     <div class="responsive-container overflow-hidden relative"
                                         style="padding-top: 56.25%"
                                     >
-                                        <iframe src="https://youtube.com/embed/D9oIu6jiYLk"
+                                        <iframe src="{{ $game['trailer'] }}"
                                             class="responsive-iframe absolute top-0 left-0 w-full h-full"
                                             width="560" height="315"
                                             style="border: 0;" allow="autoplay; encrypted-media"
