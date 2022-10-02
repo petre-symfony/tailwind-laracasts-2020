@@ -92,20 +92,21 @@
                     {{ $game['summary'] }}
                 </p>
 
-                <div class="mt-12">
-                    {{-- <button
+                <div class="mt-12" x-data="{ isTrailerModalVisible: false }">
+                    <button
                         class="
                             flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600
                             rounded transition ease-in-out duration-150
                         "
+                        @click="isTrailerModalVisible = true"
                     >
                         <svg class="w-6 fill-current" viewBox="0 0 24 24">
                             <path d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
                         </svg>
                         <span class="ml-2">Play Trailer</span>
-                    </button> --}}
-                    <a href="{{ $game['trailer'] }}"
+                    </button>
+                    {{--<a href="{{ $game['trailer'] }}"
                         class="
                             inline-flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600
                             rounded transition ease-in-out duration-150
@@ -116,14 +117,20 @@
                             <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
                         </svg>
                         <span class="ml-2">Play Trailer</span>
-                    </a>
+                    </a> --}}
+
                     <div class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
                         style="background-color: rgba(0, 0, 0, .5 )"
+                        x-show="isTrailerModalVisible"
                     >
                         <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
                             <div class="bg-gray-900 rounded">
                                 <div class="flex justify-end pr-4 pt-2">
-                                    <button class="text-3xl leading-none hover:text-gray-300">&times;</button>
+                                    <button
+                                        class="text-3xl leading-none hover:text-gray-300"
+                                        @click="isTrailerModalVisible = false"
+                                        @keydown.escape.window="isTrailerModalVisible = false"
+                                    >&times;</button>
                                 </div>
                                 <div class="modal-body px-8 py-8">
                                     <div class="responsive-container overflow-hidden relative"
